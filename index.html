@@ -18,9 +18,10 @@
       alt="wondr"
     />
 
-    <img src="./logo.png" alt="aplkasi wondr" />
+    <img id="img-logo" src="./img/logo.png" alt="aplkasi wondr" />
 
-    <h1>Teman yang tak henti jadiin segala maumu</h1>
+    <h1 id="greetingMessage">Teman yang tak henti jadiin segala maumu</h1>
+    <div id="test"></div>
     <p>
       Mulai dari transaksi ini itu, lihat rekap keuanganmu, hingga kembangin
       portofolio investasi-semua bisa kamu jadiin dengan wondr.
@@ -28,5 +29,47 @@
     <h1 style="color: blue; text-align: center">Heading Blue and Center</h1>
     <p style="color: red">Paragraph Red.</p>
     <h2>Heading CSS Internal</h2>
+
+    <p class="pesan">Pesan Pertama</p>
+    <p class="pesan">Pesan Kedua</p>
+    <p class="pesan">Pesan Ketiga</p>
+
+    <button type="button" id="btn-ubah">Ubah Gambar</button>
+
+    <div id="kontainer">
+      <p>Paragraf awal</p>
+    </div>
+
+    <script>
+      let greetingMessage = document.getElementById('greetingMessage');
+      greetingMessage.innerText = 'Selamat datang';
+
+      let test = document.getElementById('test');
+      test.innerHTML = '<h5>Hello</h5>';
+
+      const pesan = document.getElementsByClassName('pesan');
+
+      [...pesan].forEach((element) => {
+        element.innerText = 'Sudah';
+      });
+
+      const btnUbah = document.getElementById('btn-ubah');
+      btnUbah.addEventListener('click', (e) => {
+        const imgLogo = document.getElementById('img-logo');
+        const file = imgLogo.getAttribute('src');
+        if (file === './img/logo.png') {
+          imgLogo.setAttribute('src', './img/pas_foto.png');
+        } else {
+          imgLogo.setAttribute('src', './img/logo.png');
+        }
+      });
+
+      const divContainer = document.getElementById('kontainer');
+      const paragraphBaru = document.createElement('p');
+      paragraphBaru.innerText = 'Ini Paragraph Baru';
+
+      divContainer.append(paragraphBaru);
+      divContainer.remove();
+    </script>
   </body>
 </html>
