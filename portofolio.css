@@ -1,0 +1,174 @@
+body {
+  font-family: 'Heebo', sans-serif;
+  line-height: 1.6;
+  color: #000;
+  background-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======= Anchor Tag ======= */
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ======= Paragraphs ======= */
+p {
+  margin-bottom: 1em;
+}
+
+/* ======= Lists ======= */
+ul,
+ol {
+  list-style: none;
+  padding-left: 1.5rem;
+  margin-bottom: 1em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* ======= Headings ======= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* ======= Images ======= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ======= Buttons ======= */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* ======= Inputs & Textareas ======= */
+input,
+textarea,
+select {
+  font: inherit;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ======= Forms ======= */
+form {
+  display: block;
+  width: 100%;
+}
+
+/* ======= Tables ======= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 0.5em;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+/* ======= Main ======= */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  display: flex;
+  gap: 25px;
+  justify-content: end;
+  padding: 30px;
+}
+
+.header a {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.about-me {
+  max-width: 1200px; /* atau 960px, 1140px, tergantung desain */
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-me .profile .name {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.about-me .photo {
+  overflow: hidden;
+  width: 310px;
+  height: 250px;
+  border-radius: 100%;
+}
+
+.btn-resume {
+  color: #fff;
+  padding: 10px 20px;
+  background: #ff6464;
+}
+
+.post {
+  background: #edf7fa;
+  margin: 50px 0;
+  padding: 50px;
+}
+
+.post .post-ref .recent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post .post-ref {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.post .post-ref .recent a {
+  color: #00a8cc;
+}
+
+.card-list {
+  display: flex;
+  gap: 10px;
+}
+
+.card {
+  background: #fff;
+  padding: 15px;
+}
+
+.card .category {
+  display: flex;
+  gap: 20px;
+}

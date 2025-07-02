@@ -1,0 +1,552 @@
+body {
+  font-family: 'Heebo', sans-serif;
+  line-height: 1.6;
+  color: #000;
+  background-color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======= Anchor Tag ======= */
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ======= Paragraphs ======= */
+p {
+  margin-bottom: 1em;
+}
+
+/* ======= Lists ======= */
+ul,
+ol {
+  list-style: none;
+  padding-left: 1.5rem;
+  margin-bottom: 1em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* ======= Headings ======= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* ======= Images ======= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ======= Buttons ======= */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* ======= Inputs & Textareas ======= */
+input,
+textarea,
+select {
+  font: inherit;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ======= Forms ======= */
+form {
+  display: block;
+  width: 100%;
+}
+
+/* ======= Tables ======= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 0.5em;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+/* ======= Main ======= */
+header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.head-search {
+  display: flex;
+  gap: 10px;
+}
+
+.setting {
+  display: flex;
+  gap: 10px;
+}
+
+.user-profile {
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+}
+
+.btn-navbar {
+  background-color: #f5f7fa;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.btn-navbar img {
+  width: 35px;
+}
+
+.search {
+  border-radius: 0 20px 20px 0;
+}
+
+.card-balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-magnifying {
+  border: solid;
+  padding-left: 20px;
+  border-radius: 20px 0 0 20px;
+  border: 1px solid #ccc;
+  border-right: none;
+}
+
+.input-search {
+  border-radius: 0px 20px 20px 0px;
+  border-left: none;
+  padding-right: 15px;
+}
+
+.card-holder {
+  display: flex;
+  gap: 70px;
+  margin: 29px 0;
+}
+
+.card-balance img {
+  height: 40px;
+}
+
+.balance span {
+  font-size: 0.8em;
+}
+
+.balance h5 {
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.namecard span {
+  font-size: 0.8em;
+}
+
+.card-holder .namecard h6 {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.card-number {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+.bg-balance {
+  background: linear-gradient(107.38deg, #4c49ed, #0a06f4);
+}
+
+.bg-balance h5,
+.bg-balance h6 {
+  color: #fff;
+}
+
+.bg-balance span {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bg-balance-footer {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.card-number h6 {
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+
+.card-number img {
+  height: 45px;
+}
+
+.add-card a {
+  text-align: right;
+}
+
+.my-card h6,
+.expense-card h6 {
+  font-size: 1.7em;
+}
+
+.add-card {
+  text-align: right;
+}
+
+.add-card a {
+  font-size: 1.3em;
+  color: black;
+  text-decoration: none;
+}
+
+.bg-add {
+  margin-top: 9px;
+}
+
+/* Slicing expense card */
+.expense-chart h6 {
+  font-size: 1.7em;
+}
+
+.chart-container {
+  display: flex;
+  align-items: flex-end; /* Batang mulai dari bawah */
+  gap: 15px; /* Jarak antar batang */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  height: 300px; /* Tinggi maksimum chart */
+  position: relative; /* Untuk positioning tooltip */
+  overflow-x: auto; /* Untuk scrolling jika banyak batang */
+}
+
+.bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Untuk posisi label nilai */
+  min-width: 60px; /* Lebar minimum per batang */
+}
+
+.bar {
+  width: 60px;
+  background-color: #e0e2eb; /* Warna default batang */
+  border-radius: 8px 8px 0 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  position: relative; /* Untuk positioning value display */
+}
+
+.bar:hover {
+  transform: translateY(-5px); /* Efek hover */
+}
+
+.bar.active {
+  background-color: #16dbcc; /* Warna batang aktif (sesuai contoh Anda, saya gunakan hijau tua) */
+}
+
+.bar-label {
+  margin-top: 10px;
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}
+
+.value-display {
+  position: absolute;
+  top: -30px; /* Posisi di atas batang */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0; /* Sembunyikan secara default */
+  pointer-events: none; /* Agar tidak menghalangi event mouse */
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.bar:hover .value-display {
+  opacity: 1; /* Tampilkan saat hover */
+}
+
+/* Optional: Pointer segitiga untuk value-display */
+.value-display::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+}
+
+/* Untuk batang yang "terpilih" atau "aktif" seperti di gambar */
+.bar.selected {
+  background-color: #16dbcc; /* Warna hijau teal yang lebih dekat ke gambar */
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); /* Efek bayangan */
+}
+
+.bar.selected .value-display {
+  opacity: 1; /* Selalu tampilkan value-display untuk batang yang dipilih */
+}
+
+/* End Slicing expense card */
+
+/* Start slicing table */
+
+.transactions-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  width: 100%;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 5px;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #777;
+  cursor: pointer;
+  position: relative; /* Untuk underline */
+  transition: color 0.3s ease;
+}
+
+.tab-button:hover {
+  color: #333;
+}
+
+.tab-button.active {
+  color: #007bff; /* Warna biru untuk tab aktif */
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; /* Posisi underline di bawah tab-button */
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #007bff; /* Warna underline */
+  border-radius: 2px;
+}
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto; /* Untuk scrolling horizontal pada tabel jika terlalu lebar */
+}
+
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  text-align: left;
+  padding: 15px 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.table-wrapper th {
+  background-color: #f8f8f8;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.table-wrapper td {
+  color: #555;
+}
+
+/* Specific column styles */
+.table-wrapper td:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.transaction-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e0f7fa; /* Default light blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00bcd4; /* Default blue icon color */
+  font-size: 12px;
+}
+
+.transaction-icon.income {
+  background-color: #e8f5e9; /* Light green */
+  color: #4caf50; /* Green icon color */
+}
+
+.transaction-icon.expense {
+  background-color: #ffebee; /* Light red */
+  color: #f44336; /* Red icon color */
+}
+
+.amount.expense {
+  color: #f44336; /* Merah */
+  font-weight: 600;
+}
+
+.amount.income {
+  color: #4caf50; /* Hijau */
+  font-weight: 600;
+}
+
+.receipt-button {
+  background-color: #e6f2ff; /* Biru muda */
+  color: #007bff; /* Biru */
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.receipt-button:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 15px;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #f0f0f0;
+  border-color: #bbb;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 8px;
+}
+
+.page-number {
+  background-color: #f0f2f5;
+  color: #555;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-number:hover:not(.active) {
+  background-color: #e0e0e0;
+}
+
+.page-number.active {
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* End slicing table */
+
+@media only screen and (max-width: 600px) {
+  .setting {
+    display: none;
+  }
+
+  .add-card {
+    margin-top: 20px;
+  }
+
+  .expense-chart {
+    margin-top: 20px;
+  }
+}

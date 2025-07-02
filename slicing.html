@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./slicing.css
+    "
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <h3>Transaction</h3>
+      <div class="head-search">
+        <div class="setting">
+          <div class="input-group">
+            <img class="icon-magnifying" src="./icon/search.svg" alt="" />
+            <input
+              type="text"
+              class="input-search"
+              placeholder="Search for something"
+            />
+          </div>
+          <a class="btn-navbar">
+            <img src="./icon/settings 1.svg" alt="settings" />
+          </a>
+          <a class="btn-navbar">
+            <img src="./icon/notification-1.svg" alt="" />
+          </a>
+        </div>
+        <img class="user-profile" src="./icon/user-image.png" alt="profile" />
+      </div>
+    </header>
+    <main class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="my-card">
+            <h6>My Cards</h6>
+            <div class="card bg-balance" style="border-radius: 25px">
+              <div class="card-body px-4 py-4">
+                <div class="card-balance">
+                  <div class="balance">
+                    <span>Balance</span>
+                    <h5>$5,675</h5>
+                  </div>
+                  <img src="./icon/chip-white.svg" alt="chip" />
+                </div>
+                <div class="card-holder">
+                  <div class="namecard">
+                    <span>CARD HOLDER</span>
+                    <h6>Eddy Cusuma</h6>
+                  </div>
+                  <div class="namecard">
+                    <span>VALID THRU</span>
+                    <h6>12/22</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer bg-balance-footer">
+                <div class="card-number">
+                  <h6>3778 **** **** 1234</h6>
+                  <img src="./icon/mastercard-trans.svg" alt="chip" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="add-card">
+            <a href="">+ Add Card</a>
+            <div class="card bg-add" style="border-radius: 25px">
+              <div class="card-body px-4 py-4">
+                <div class="card-balance">
+                  <div class="balance">
+                    <span>Balance</span>
+                    <h5>$5,675</h5>
+                  </div>
+                  <img src="./icon/chip-gray.svg" alt="chip" />
+                </div>
+                <div class="card-holder">
+                  <div class="namecard">
+                    <span>CARD HOLDER</span>
+                    <h6>Eddy Cusuma</h6>
+                  </div>
+                  <div class="namecard">
+                    <span>VALID THRU</span>
+                    <h6>12/22</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="card-number">
+                  <h6>3778 **** **** 1234</h6>
+                  <img src="./icon/mastercard-gray.svg" alt="chip" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-4">
+          <div class="expense-chart">
+            <h6>My Expense</h6>
+            <div class="chart-container"></div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-5">
+          <div class="transactions-container">
+            <h4>Recent Transactions</h4>
+
+            <div class="tabs">
+              <button class="tab-button active" data-tab="all">
+                All Transactions
+              </button>
+              <button class="tab-button" data-tab="income">Income</button>
+              <button class="tab-button" data-tab="expense">Expense</button>
+            </div>
+
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Description</th>
+                    <th>Transaction ID</th>
+                    <th>Type</th>
+                    <th>Card</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Receipt</th>
+                  </tr>
+                </thead>
+                <tbody id="transaction-rows"></tbody>
+              </table>
+            </div>
+
+            <div class="pagination">
+              <button class="pagination-button" id="prev-page">
+                <i class="fas fa-chevron-left"></i> Previous
+              </button>
+              <div class="page-numbers" id="page-numbers"></div>
+              <button class="pagination-button" id="next-page">
+                Next <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
